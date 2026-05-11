@@ -1,0 +1,106 @@
+# ── 配置文件（含密钥/密码/Token，不提交）──
+config.yaml
+**/config.yaml
+**/data/
+*.config.yaml
+**/.config.yaml
+*.private.yaml
+*.private_config.yaml
+*.secrets.yaml
+**/private/
+**/secrets/
+
+# ── 环境变量（含数据库密码/API Key/MQTT凭据等）──
+.env
+.env.*
+*.env
+**/.env
+**/.env.*
+
+# ── Spring Boot / 后端配置（含数据库密码）──
+**/application-dev.yml
+**/application-prod.yml
+**/application-test.yml
+**/bootstrap.yml
+**/application-*.yml
+
+# ── Docker Compose（含数据库密码）──
+docker-compose*.yml
+**/docker-compose*.yml
+
+# ── 证书文件 ──
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.cer
+*.der
+*.p7b
+*.p7c
+*.jks
+*.keystore
+*.truststore
+
+# ── 大文件 / 外部工具 ──
+ffmpeg-master-latest-win64-gpl-shared/
+ffmpeg-master-latest-win64-gpl-shared.zip
+
+# ── ESP-IDF 构建产物 ──
+build/
+sdkconfig
+sdkconfig.old
+sdkconfig.ci
+sdkconfig.bak
+dependencies.lock
+managed_components/
+*.bin
+*.elf
+*.map
+*.hex
+*.img
+flasher_args.json
+flash_args
+flash_args.json
+*.elf.SHA256
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+*.egg
+
+# ── IDE / Editor ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+*.sublime-project
+
+# ── Claude Code ──
+.claude/
+
+# ── 系统文件 ──
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ── 本地配置覆盖 ──
+*.local
+**/*.local
+
+# ── 日志 ──
+*.log
+
+# ── clangd ──
+.clangd
+.cache/
