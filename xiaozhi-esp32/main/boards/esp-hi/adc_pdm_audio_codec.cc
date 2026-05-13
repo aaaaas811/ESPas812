@@ -160,9 +160,11 @@ void AdcPdmAudioCodec::EnableInput(bool enable) {
             .mclk_multiple = 0,
         };
         ESP_ERROR_CHECK(esp_codec_dev_open(input_dev_, &fs));
-    } else {
-        ESP_ERROR_CHECK(esp_codec_dev_close(input_dev_));
     }
+    // esp_codec_dev_close is intentionally NOT called here.
+    // The ADC mutex (adc_lock_acquire/release) requires the same task to open and
+    // close the device, but close is triggered from timer/audio_input tasks which
+    // differ from the task that opened it. The device is only closed in ~dtor.
     AudioCodec::EnableInput(enable);
 }
 

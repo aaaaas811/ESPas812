@@ -955,6 +955,7 @@ class ConnectionHandler:
             # 仅在第一层调用时注入 direct_answer 虚拟工具
             # 递归调用（depth>0）不注入，避免模型在生成文本回复时再次调 direct_answer 导致循环
             if functions is not None and depth == 0:
+                functions = list(functions)  # 复制一份，避免污染缓存
                 functions.append(DIRECT_ANSWER_TOOL)
 
         response_message = []

@@ -19,6 +19,7 @@
         "client_info": {
             "name": "xiaozhi-mqtt-client",
             "version": "1.0.0"
-        }
+        },
+        "max_tools_count": 128
     }
 }
